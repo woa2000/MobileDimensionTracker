@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { FaTasks } from "react-icons/fa6";
+import { FaListCheck } from "react-icons/fa6";
 
 export default function LoginPage() {
   const [, setLocation] = useLocation();
@@ -44,7 +44,7 @@ export default function LoginPage() {
         {/* App Logo */}
         <div className="text-center mb-12">
           <div className="w-20 h-20 mx-auto mb-4 bg-primary rounded-2xl flex items-center justify-center">
-            <FaTasks className="text-white text-2xl" />
+            <FaListCheck className="text-white text-2xl" />
           </div>
           <h1 className="text-2xl font-semibold text-primary">Executor</h1>
           <p className="text-muted-foreground mt-2">Gerenciador de Tarefas</p>
