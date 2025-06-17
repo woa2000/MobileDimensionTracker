@@ -16,7 +16,7 @@ export default function HomePage() {
           <h1 className="text-2xl font-semibold text-primary mb-2">
             Olá, {user?.name?.split(' ')[0] || 'Carlos'}! 👋
           </h1>
-          <p className="text-muted-foreground">Você tem 3 tarefas pendentes hoje</p>
+          <p className="text-muted-foreground">Você tem 5 tarefas de retail pendentes hoje</p>
         </div>
         
         {/* Next Task Card */}
@@ -32,8 +32,8 @@ export default function HomePage() {
                 <FaWrench className="text-white" />
               </div>
               <div className="flex-1">
-                <h4 className="font-medium text-foreground">Manutenção Equipamento #4521</h4>
-                <p className="text-sm text-muted-foreground mt-1">Shopping Center Norte - Sala 201</p>
+                <h4 className="font-medium text-foreground">Reposição de Estoque - Setor Eletrônicos</h4>
+                <p className="text-sm text-muted-foreground mt-1">Loja Shopping Morumbi - Setor A3</p>
                 <p className="text-xs text-muted-foreground mt-1">Prazo: Hoje até 18:00</p>
               </div>
             </div>
@@ -43,11 +43,11 @@ export default function HomePage() {
         {/* Stats Cards */}
         <div className="grid grid-cols-2 gap-4 mb-6">
           <div className="bg-card rounded-xl p-4 text-center border border-border">
-            <div className="text-2xl font-bold text-green-600">12</div>
+            <div className="text-2xl font-bold text-green-600">18</div>
             <div className="text-sm text-muted-foreground">Concluídas</div>
           </div>
           <div className="bg-card rounded-xl p-4 text-center border border-border">
-            <div className="text-2xl font-bold text-accent">3</div>
+            <div className="text-2xl font-bold text-accent">5</div>
             <div className="text-sm text-muted-foreground">Pendentes</div>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function HomePage() {
                 <FaCheck className="text-white text-xs" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium">Tarefa #4519 concluída</p>
+                <p className="text-sm font-medium">Auditoria de preços concluída</p>
                 <p className="text-xs text-muted-foreground">Há 2 horas</p>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function HomePage() {
                 <FaClock className="text-white text-xs" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium">Nova tarefa atribuída</p>
+                <p className="text-sm font-medium">Nova reposição de estoque atribuída</p>
                 <p className="text-xs text-muted-foreground">Há 4 horas</p>
               </div>
             </div>

@@ -26,7 +26,7 @@ export default function TasksPage() {
     <div className="h-full flex flex-col bg-muted/30">
       <div className="bg-card p-6 border-b border-border">
         <h1 className="text-xl font-semibold text-primary">Suas Tarefas</h1>
-        <p className="text-muted-foreground text-sm mt-1">3 tarefas pendentes</p>
+        <p className="text-muted-foreground text-sm mt-1">5 tarefas de retail pendentes</p>
       </div>
       
       {/* Filter Tabs */}

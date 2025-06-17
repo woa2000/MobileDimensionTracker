@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { FaMapMarkerAlt, FaClock, FaChevronRight } from "react-icons/fa";
 import { FaWrench, FaShield, FaBroom } from "react-icons/fa6";
-import { MockTask, getPriorityColor, getPriorityLabel } from "@/data/mockTasks";
+import { MockTask, getPriorityColor, getPriorityLabel, getCategoryLabel } from "@/data/mockTasks";
 
 interface TaskCardProps {
   task: MockTask;
@@ -48,7 +48,7 @@ export default function TaskCard({ task }: TaskCardProps) {
             <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
               <Icon className="text-muted-foreground text-xs" />
             </div>
-            <span className="text-sm text-muted-foreground capitalize">{task.category}</span>
+            <span className="text-sm text-muted-foreground">{getCategoryLabel(task.category)}</span>
           </div>
           <FaChevronRight className="text-muted-foreground" />
         </div>
