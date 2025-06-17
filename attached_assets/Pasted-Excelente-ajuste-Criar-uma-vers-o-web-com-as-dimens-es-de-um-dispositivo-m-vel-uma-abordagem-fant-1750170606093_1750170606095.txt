@@ -1,0 +1,74 @@
+Excelente ajuste. Criar uma versão web com as dimensões de um dispositivo móvel é uma abordagem fantástica para prototipagem rápida, pois elimina a complexidade do ambiente de desenvolvimento mobile (emuladores, SDKs) e permite um compartilhamento muito mais fácil via URL.
+Aqui está o prompt ideal para o Replit, ajustado para essa nova abordagem.
+Prompt Ideal para o Replit AI (Protótipo Web Mobile)
+Assunto: Criação de um protótipo web interativo com layout mobile para App de Executor.
+Olá! Sua tarefa é atuar como um desenvolvedor frontend sênior e criar um protótipo interativo e não funcional que simula um aplicativo mobile. O protótipo será uma página web, mas seu layout será contido em um frame com as dimensões de um celular.
+Tecnologias:
+ * Framework: React 18 + Vite (usando TypeScript).
+ * Estilização: Styled Components ou CSS Modules.
+ * Roteamento: react-router-dom.
+ * Ícones: react-icons.
+Fonte da Verdade (Resumo do PRD):
+O design e a funcionalidade devem simular o App Mobile Executor, seguindo estas diretrizes:
+ * Layout Principal:
+   * Frame de Celular: Todo o conteúdo do aplicativo será renderizado dentro de um contêiner principal centralizado na página, com max-width: 420px e height: 844px para simular a tela de um iPhone. Este contêiner deve ter uma sombra (box-shadow) sutil para se destacar do fundo da página.
+ * Navegação Principal:
+   * Um Barra de Navegação Inferior (BottomNavBar) fixa na base do frame do celular, com 4 abas: Início, Tarefas, Chat e Perfil.
+   * Um Floating Action Button (FAB) centralizado para a ação "Iniciar Check-in".
+ * Diretrizes de UI/UX:
+   * Paleta de Cores: Fundo claro (branco), textos escuros (#0A2463), cor de destaque laranja vibrante (#F9A826).
+   * Componentes: Botões grandes e fáceis de clicar.
+Estrutura de Arquivos Solicitada:
+/src
+|-- /components
+|   |-- /common
+|   |   |-- AppButton.tsx
+|   |   |-- TaskCard.tsx
+|   |-- /layout
+|   |   |-- BottomNavBar.tsx
+|   |   |-- MobileFrame.tsx   // O contêiner principal que simula o celular
+|   |   |-- SyncStatusBar.tsx
+|-- /data
+|   |-- mockTasks.ts
+|-- /pages
+|   |-- LoginPage.tsx
+|   |-- HomePage.tsx
+|   |-- TasksPage.tsx
+|   |-- ChatPage.tsx
+|   |-- ProfilePage.tsx
+|   |-- /workflow // Pasta para as páginas do fluxo de uma tarefa
+|   |   |-- CheckinPage.tsx
+|   |   |-- FormPage.tsx
+|   |   |-- MediaPage.tsx
+|-- /router
+|   |-- AppRouter.tsx
+|-- /styles
+|   |-- globals.css // Estilos gerais, como o fundo da página
+|-- App.tsx
+|-- main.tsx
+
+Passos para a Implementação (Siga esta ordem):
+ * Configuração Inicial: Configure o projeto Vite + React + TS. Instale react-router-dom, react-icons e styled-components (se for o método de estilo escolhido).
+ * Criação do Frame Mobile:
+   * Crie o componente MobileFrame.tsx. Ele será um div que envolve todo o conteúdo do aplicativo.
+   * Estilize este div para que fique centralizado na tela, com max-width: 420px, height: 844px, border: 8px solid black, border-radius: 40px, box-shadow: 0 0 20px rgba(0,0,0,0.2) e overflow-y: auto para permitir a rolagem do conteúdo interno.
+ * Roteamento e Layout:
+   * No App.tsx, renderize o MobileFrame e, dentro dele, o AppRouter.tsx.
+   * Crie o AppRouter.tsx para gerenciar todas as rotas. Implemente uma lógica de autenticação simulada: a rota / deve levar para LoginPage. Após o "login", o usuário é redirecionado para /home.
+   * Crie o componente BottomNavBar.tsx e o posicione de forma fixa na parte inferior do MobileFrame para as rotas /home, /tasks, /chat e /profile.
+ * Desenvolvimento das Páginas (dentro do Frame):
+   * LoginPage.tsx: Crie um formulário simples com campos de input e um button "Entrar". O clique deve navegar para /home.
+   * HomePage.tsx:
+     * Exiba o SyncStatusBar no topo com uma mensagem de status.
+     * Mostre um título "Olá, Carlos!" e um card para a "Próxima Tarefa".
+     * Adicione o FAB (um button circular laranja com um ícone de QR Code) posicionado na parte inferior direita. O clique deve navegar para /workflow/checkin.
+   * TasksPage.tsx:
+     * Use um div com overflow-y: auto para listar os componentes TaskCard baseados em dados mockados.
+     * Cada TaskCard deve ser um Link de react-router-dom que navega para /workflow/checkin, passando um ID de tarefa.
+ * Fluxo de Trabalho Interativo (Navegação em Pilha Simulada):
+   * As páginas dentro de /workflow devem substituir o conteúdo da tela, sem o BottomNavBar para focar o usuário na tarefa.
+   * CheckinPage.tsx: Mostre uma "área de câmera" (um div quadrado) e um botão "Simular Scan do QR", que navega para /workflow/form. Inclua um ícone de "voltar" no canto superior esquerdo para navegar para a página anterior.
+   * FormPage.tsx: Exiba um formulário web padrão com input, checkbox, etc. O botão "Avançar" deve navegar para /workflow/media.
+   * MediaPage.tsx: Crie botões "Adicionar Foto" e "Adicionar Vídeo". Adicione um botão final "Finalizar e Enviar". O clique neste botão deve mostrar um alert() de sucesso e navegar o usuário de volta para /tasks.
+Conclusão:
+O resultado deve ser uma página web única que exibe no centro um protótipo visualmente idêntico a um aplicativo mobile. Todas as interações de navegação (abas, botões, fluxo de trabalho) devem funcionar, usando react-router-dom para simular a transição entre telas, tudo contido dentro do "frame" do celular.
