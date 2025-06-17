@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { FaMapMarkerAlt, FaClock, FaChevronRight } from "react-icons/fa";
-import { FaWrench, FaShieldAlt, FaBroom } from "react-icons/fa6";
+import { FaWrench, FaShield, FaBroom } from "react-icons/fa6";
 import { MockTask, getPriorityColor, getPriorityLabel } from "@/data/mockTasks";
 
 interface TaskCardProps {
@@ -11,7 +11,7 @@ export default function TaskCard({ task }: TaskCardProps) {
   const getIcon = (category: string) => {
     switch (category) {
       case "maintenance": return FaWrench;
-      case "security": return FaShieldAlt;
+      case "security": return FaShield;
       case "cleaning": return FaBroom;
       default: return FaWrench;
     }

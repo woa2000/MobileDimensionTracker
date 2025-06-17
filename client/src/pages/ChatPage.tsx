@@ -1,4 +1,4 @@
-import { FaHeadset, FaUserTie, FaUsers, FaQuestionCircle, FaPhone } from "react-icons/fa6";
+import { FaHeadset, FaUserTie, FaUsers, FaCircleQuestion, FaPhone } from "react-icons/fa6";
 
 export default function ChatPage() {
   const chats = [
@@ -77,7 +77,7 @@ export default function ChatPage() {
           <h3 className="font-semibold text-primary mb-4">Ações Rápidas</h3>
           <div className="grid grid-cols-2 gap-4">
             <button className="bg-card rounded-xl p-4 text-center border border-border flex flex-col items-center gap-2 hover:bg-muted/50 transition-colors">
-              <FaQuestionCircle className="text-accent text-xl" />
+              <FaCircleQuestion className="text-accent text-xl" />
               <span className="text-sm font-medium">FAQ</span>
             </button>
             <button className="bg-card rounded-xl p-4 text-center border border-border flex flex-col items-center gap-2 hover:bg-muted/50 transition-colors">

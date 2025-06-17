@@ -1,6 +1,6 @@
 import { useLocation } from "wouter";
 import { Link } from "wouter";
-import { FaHome, FaListCheck, FaComments, FaUser } from "react-icons/fa6";
+import { FaHouse, FaListCheck, FaComments, FaUser } from "react-icons/fa6";
 
 export default function BottomNavBar() {
   const [location] = useLocation();

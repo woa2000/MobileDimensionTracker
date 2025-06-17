@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams, useLocation } from "wouter";
-import { FaArrowLeft, FaCamera, FaVideo, FaCheck, FaSave, FaImage, FaTrash } from "react-icons/fa6";
+import { FaArrowLeft, FaCamera, FaVideo, FaCheck, FaFloppyDisk, FaImage, FaTrash } from "react-icons/fa6";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import AppButton from "@/components/common/AppButton";
@@ -180,7 +180,7 @@ export default function MediaPage() {
             onClick={saveDraft}
             variant="outline"
             className="w-full"
-            icon={<FaSave />}
+            icon={<FaFloppyDisk />}
           >
             Salvar Rascunho
           </AppButton>

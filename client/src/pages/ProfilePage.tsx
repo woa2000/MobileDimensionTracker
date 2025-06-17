@@ -1,6 +1,6 @@
 import { authService } from "@/lib/auth";
 import { useLocation } from "wouter";
-import { FaUser, FaChartLine, FaCog, FaSignOutAlt, FaChevronRight } from "react-icons/fa6";
+import { FaUser, FaChartLine, FaGear, FaArrowRightFromBracket, FaChevronRight } from "react-icons/fa6";
 
 export default function ProfilePage() {
   const [, setLocation] = useLocation();
@@ -31,7 +31,7 @@ export default function ProfilePage() {
     {
       title: "Configurações",
       description: "Notificações e preferências",
-      icon: FaCog,
+      icon: FaGear,
       bgColor: "bg-purple-50",
       iconColor: "text-purple-600",
       onClick: () => console.log("Navigate to settings"),
@@ -39,7 +39,7 @@ export default function ProfilePage() {
     {
       title: "Sair",
       description: "Fazer logout da conta",
-      icon: FaSignOutAlt,
+      icon: FaArrowRightFromBracket,
       bgColor: "bg-red-50",
       iconColor: "text-red-600",
       onClick: handleLogout,
