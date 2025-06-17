@@ -14,15 +14,15 @@ export default function FormPage() {
   const taskId = params.taskId;
 
   const [formData, setFormData] = useState({
-    status: "funcionando",
+    status: "completo",
     checks: {
-      filters: true,
-      temperature: true,
-      functionality: false,
-      visual: false,
+      inventory: true,
+      pricing: true,
+      organization: false,
+      display: false,
     },
-    observations: "Equipamento funcionando normalmente. Filtros limpos e temperatura dentro do padrão.",
-    nextMaintenance: "2024-02-15",
+    observations: "Estoque reposto conforme necessário. Produtos organizados adequadamente nas prateleiras.",
+    nextCheck: "2024-02-20",
   });
 
   const goBack = () => {
@@ -77,41 +77,41 @@ export default function FormPage() {
         
         {/* Form Content */}
         <div className="bg-card rounded-2xl p-6 shadow-sm border border-border">
-          <h3 className="font-semibold text-primary mb-6">Inspeção do Equipamento</h3>
+          <h3 className="font-semibold text-primary mb-6">Relatório de Atividade</h3>
           
           <div className="space-y-6">
-            {/* Status do Equipamento */}
+            {/* Status da Tarefa */}
             <div>
-              <Label className="text-sm font-medium text-foreground mb-3 block">Status do Equipamento</Label>
+              <Label className="text-sm font-medium text-foreground mb-3 block">Status da Atividade</Label>
               <RadioGroup 
                 value={formData.status} 
                 onValueChange={(value) => setFormData(prev => ({ ...prev, status: value }))}
                 className="space-y-2"
               >
                 <div className="flex items-center space-x-3">
-                  <RadioGroupItem value="funcionando" id="funcionando" />
-                  <Label htmlFor="funcionando" className="text-sm">Funcionando Normalmente</Label>
+                  <RadioGroupItem value="completo" id="completo" />
+                  <Label htmlFor="completo" className="text-sm">Tarefa Completa</Label>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <RadioGroupItem value="problemas" id="problemas" />
-                  <Label htmlFor="problemas" className="text-sm">Com Problemas</Label>
+                  <RadioGroupItem value="parcial" id="parcial" />
+                  <Label htmlFor="parcial" className="text-sm">Parcialmente Completa</Label>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <RadioGroupItem value="parado" id="parado" />
-                  <Label htmlFor="parado" className="text-sm">Parado/Inoperante</Label>
+                  <RadioGroupItem value="pendente" id="pendente" />
+                  <Label htmlFor="pendente" className="text-sm">Necessita Ação Adicional</Label>
                 </div>
               </RadioGroup>
             </div>
             
             {/* Verificações */}
             <div>
-              <Label className="text-sm font-medium text-foreground mb-3 block">Verificações Realizadas</Label>
+              <Label className="text-sm font-medium text-foreground mb-3 block">Atividades Realizadas</Label>
               <div className="space-y-2">
                 {[
-                  { key: "filters", label: "Limpeza dos filtros" },
-                  { key: "temperature", label: "Verificação de temperatura" },
-                  { key: "functionality", label: "Teste de funcionalidade" },
-                  { key: "visual", label: "Inspeção visual geral" },
+                  { key: "inventory", label: "Verificação de estoque" },
+                  { key: "pricing", label: "Conferência de preços" },
+                  { key: "organization", label: "Organização de produtos" },
+                  { key: "display", label: "Montagem de display" },
                 ].map((check) => (
                   <div key={check.key} className="flex items-center space-x-3">
                     <Checkbox
@@ -134,18 +134,18 @@ export default function FormPage() {
                 onChange={(e) => setFormData(prev => ({ ...prev, observations: e.target.value }))}
                 className="form-input resize-none"
                 rows={4}
-                placeholder="Descreva qualquer observação relevante sobre o equipamento..."
+                placeholder="Descreva detalhes sobre a atividade realizada, produtos verificados, etc..."
               />
             </div>
             
-            {/* Próxima Manutenção */}
+            {/* Próxima Verificação */}
             <div>
-              <Label htmlFor="nextMaintenance" className="text-sm font-medium text-foreground mb-2 block">Próxima Manutenção</Label>
+              <Label htmlFor="nextCheck" className="text-sm font-medium text-foreground mb-2 block">Próxima Verificação</Label>
               <Input
-                id="nextMaintenance"
+                id="nextCheck"
                 type="date"
-                value={formData.nextMaintenance}
-                onChange={(e) => setFormData(prev => ({ ...prev, nextMaintenance: e.target.value }))}
+                value={formData.nextCheck}
+                onChange={(e) => setFormData(prev => ({ ...prev, nextCheck: e.target.value }))}
                 className="form-input"
               />
             </div>

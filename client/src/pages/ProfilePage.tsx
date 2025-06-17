@@ -62,20 +62,20 @@ export default function ProfilePage() {
             </span>
           </div>
           <h2 className="text-xl font-semibold text-foreground">{user?.name || 'Carlos Antônio'}</h2>
-          <p className="text-muted-foreground">Técnico de Manutenção</p>
-          <p className="text-sm text-muted-foreground mt-1">ID: EXE-2024-001</p>
+          <p className="text-muted-foreground">Associado de Retail</p>
+          <p className="text-sm text-muted-foreground mt-1">ID: RET-2024-001</p>
           
           <div className="flex justify-center gap-6 mt-6 pt-4 border-t border-border">
             <div className="text-center">
-              <div className="text-lg font-semibold text-primary">15</div>
+              <div className="text-lg font-semibold text-primary">23</div>
               <div className="text-xs text-muted-foreground">Tarefas Concluídas</div>
             </div>
             <div className="text-center">
-              <div className="text-lg font-semibold text-green-500">98%</div>
+              <div className="text-lg font-semibold text-green-500">96%</div>
               <div className="text-xs text-muted-foreground">Taxa de Sucesso</div>
             </div>
             <div className="text-center">
-              <div className="text-lg font-semibold text-accent">4.9</div>
+              <div className="text-lg font-semibold text-accent">4.8</div>
               <div className="text-xs text-muted-foreground">Avaliação</div>
             </div>
           </div>

@@ -6,9 +6,9 @@ export default function TasksPage() {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const filterButtons = [
-    { key: "all", label: "Todas (3)", count: 3 },
+    { key: "all", label: "Todas (5)", count: 5 },
     { key: "urgent", label: "Urgentes (1)", count: 1 },
-    { key: "today", label: "Hoje (2)", count: 2 },
+    { key: "today", label: "Hoje (3)", count: 3 },
   ];
 
   const filteredTasks = mockTasks.filter(task => {

@@ -15,7 +15,7 @@ class AuthService {
         id: 1,
         username: "carlos@empresa.com",
         name: "Carlos Antônio",
-        role: "technician"
+        role: "retail_associate"
       };
       localStorage.setItem("auth_user", JSON.stringify(this.currentUser));
       return this.currentUser;

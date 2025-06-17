@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a full-stack web application built as a task management system (called "Executor") designed for technicians to manage field work tasks. The application features a mobile-first design with React frontend and Express backend, using PostgreSQL for data persistence and Drizzle ORM for database operations.
+This is a full-stack web application built as a task management system (called "Executor") designed for retail associates to manage store operations tasks. The application features a mobile-first design with React frontend and Express backend, using PostgreSQL for data persistence and Drizzle ORM for database operations.
 
 ## System Architecture
 
@@ -44,7 +44,7 @@ This is a full-stack web application built as a task management system (called "
 - Task creation, assignment, and status tracking
 - Priority levels: urgent, normal, low
 - Status workflow: pending, in_progress, completed
-- Categories: maintenance, security, cleaning
+- Categories: operations (stock replenishment, display setup), audits (price verification, inventory checks), cleaning (store organization, PDV maintenance)
 
 ### Workflow System
 - Multi-step task completion process:
@@ -111,6 +111,7 @@ This is a full-stack web application built as a task management system (called "
 ```
 Changelog:
 - June 17, 2025. Initial setup
+- June 17, 2025. Adapted content for retail operations - converted from maintenance tasks to retail activities (stock replenishment, price audits, display setup, store organization)
 ```
 
 ## User Preferences
