@@ -6,7 +6,7 @@ export default function BottomNavBar() {
   const [location] = useLocation();
 
   const navItems = [
-    { path: "/home", icon: FaHome, label: "Início" },
+    { path: "/home", icon: FaHouse, label: "Início" },
     { path: "/tasks", icon: FaListCheck, label: "Tarefas" },
     { path: "/chat", icon: FaComments, label: "Chat" },
     { path: "/profile", icon: FaUser, label: "Perfil" },
